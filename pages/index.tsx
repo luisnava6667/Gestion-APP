@@ -1,4 +1,3 @@
-import { BackgrounImages } from '@/components/BackgrounImages'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -23,15 +22,15 @@ export default function Home() {
           />
           <h3 className='text-xl mt-20 mb-5'>¿Qué quieres hacer?</h3>
           <div className='grid font-bold text-lg sm:text-2xl gap-6 sm:gap-11 sm:mt-7 w-7/12 text-[#FF5D67]'>
-            <Link
-              href={'/login'}
-              className='bg-[#29282F] py-3 sm:px-12 rounded-3xl'>
-              Iniciar Sesión
+            <Link legacyBehavior href={'/login'}>
+              <a className='bg-[#29282F] py-3 sm:px-12 rounded-3xl'>
+                Iniciar Sesión
+              </a>
             </Link>
-            <Link
-              href='/registro'
-              className='bg-[#29282F] py-3 sm:px-12 rounded-3xl'>
-              Registrarse
+            <Link legacyBehavior href='/registro'>
+              <a className='bg-[#29282F] py-3 sm:px-12 rounded-3xl'>
+                Registrarse
+              </a>
             </Link>
           </div>
         </div>

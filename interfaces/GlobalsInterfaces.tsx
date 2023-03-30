@@ -2,7 +2,7 @@ export interface FormValues {
   nombre: string
   email: string
   password: string
-  confirmPassword: string
+  confirmPassword?: string
   localNombre: string
   telefono: string
   ciudad: string

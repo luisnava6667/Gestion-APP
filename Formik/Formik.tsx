@@ -1,7 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import * as Yup from 'yup'
 import { FormikHelpers, useFormik } from 'formik'
 import { FormValues } from '@/interfaces/GlobalsInterfaces'
-import Swal from 'sweetalert2'
 
 export const initialValues: FormValues = {
   nombre: '',
@@ -13,36 +13,7 @@ export const initialValues: FormValues = {
   ciudad: '',
   direccion: ''
 }
-export const onSubmit = (values: { confirmPassword: any }) => {
-  delete values.confirmPassword
-  console.log('Values:', values)
-  fetch('http://localhost:3001/local', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(values)
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log('Success:', data)
-      Swal.fire({
-        title: '¡Éxito!',
-        text: 'La acción se completó exitosamente.',
-        icon: 'success',
-        confirmButtonText: 'Aceptar'
-      })
-    })
-    .catch((error) => {
-      console.error('Error:', error)
-      Swal.fire({
-        title: 'Error!',
-        text: 'La acción se completó exitosamente.',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      })
-    })
-}
+//submit del formik guardando en el state
 const phoneRegExp = /^(1?(-?\d{3})-?)?(\d{3})(-?\d{4})$/
 const required: string = '¡Este campo es requerido!'
 export const validationSchema: Yup.Schema<FormValues> = Yup.object({

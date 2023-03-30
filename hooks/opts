@@ -1,0 +1,64 @@
+// const startRegister = async (values: FormValues) => {
+//   try {
+//     const { data } = await axios.post('http://localhost:3001/local', {
+//       ...values
+//     })
+//     localStorage.setItem('token', data.token)
+//     dispatch(
+//       registerUser({
+//         user: data.user,
+//         token: data.token,
+//         nombre: data.nombre
+//       })
+//     )
+//     //creo el swal y espero que de ok para redirigir
+//     const resultado = await Swal.fire({
+//       icon: 'success',
+//       title: 'Bienvenido',
+//       showConfirmButton: true,
+//       confirmButtonText: 'OK'
+//     })
+//     if (resultado.isConfirmed) {
+//       router.push('/inicio')
+//     }
+//   } catch (e: any) {
+//     Swal.fire({
+//       icon: 'error',
+//       text: e.response.data.error
+//     })
+//   }
+// }
+// //cerramos sesion pero sin hacer el re
+// const startLogout = () => {
+//   dispatch(logoutUser())
+//   localStorage.removeItem('token')
+//   Swal.fire({
+//     icon: 'success',
+//     title: 'Hasta pronto',
+//     showConfirmButton: false,
+//     timer: 1000
+//   })
+//   setTimeout(() => {
+//     router.push('/login')
+//   }, 1000)
+// }
+// //traemos los empleados de la api y validamos que el id del local sea igual al id del params
+// const getEmpleados = async () => {
+//   const { data } = await gestionApp.get('/empleados')
+//   const empleados = data.empleados.filter(
+//     (empleado: any) => empleado.local === router.query.id
+//   )
+//   dispatch(getEmpleados(empleados))
+// }
+
+
+// Swal.fire({
+//   position: 'top-end',
+//   icon: 'success',
+//   title: 'Bienvenido',
+//   showConfirmButton: false,
+//   timer: 1000
+// })
+// setTimeout(() => {
+// router.push('/inicio')
+// }, 1000)
